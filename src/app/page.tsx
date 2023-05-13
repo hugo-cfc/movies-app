@@ -1,9 +1,16 @@
-// import Image from "next/image";
+import DarkModeButton from "../components/isolated/DarkModeButton";
 
 export const metadata = {
   title: "adad",
 };
 
 export default function Home() {
-  return <h1 className="text-3xl font-bold underline ">Hello world!</h1>;
+  return (
+    <>
+      <DarkModeButton />
+      <h1 className="text-3xl font-bold underline text-black dark:text-white">
+        Hello world!
+      </h1>
+    </>
+  );
 }
