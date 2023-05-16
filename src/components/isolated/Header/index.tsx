@@ -23,7 +23,7 @@ const Header = () => {
         <ListMenu />
 
         <div className="col-start-10 col-end-13 flex justify-end">
-          <Input inputProps={{ placeholder: "Filme, série, ator, etc..." }} />
+          <Input placeholder="Filme, série, ator, etc..." />
         </div>
       </div>
     </header>
