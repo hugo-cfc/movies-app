@@ -13,7 +13,7 @@ const ListMenu = () => {
       <ul className="flex flex-wrap items-center justify-center text-gray-900 dark:text-white">
         {menuItems.map((item) => (
           <li key={item.id} className="w-[70px] ">
-            <div className="p-2 flex justify-center text-white">
+            <div className="p-2 flex justify-center text-white transition ease-in-out hover:scale-110 duration-300">
               <Link href={item.path}>{item.title}</Link>
             </div>
             {pathname === item.path && (

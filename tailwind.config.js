@@ -37,6 +37,12 @@ module.exports = {
           "100%": { width: "100%" },
         },
       },
+      dropShadow: {
+        carouselDetails: "0px 4px 4px rgba(0, 0, 0, 0.4)",
+      },
+      blur: {
+        carouselBackground: "9px",
+      },
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],
