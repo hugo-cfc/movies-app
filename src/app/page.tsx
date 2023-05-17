@@ -1,4 +1,4 @@
-import Media from "@/@types/movie";
+import Media from "@/@types/media";
 import Carousel from "@/components/isolated/Carousel";
 import Header from "@/components/isolated/Header";
 import { fetchWrapper } from "@/services/fetchWrapper";

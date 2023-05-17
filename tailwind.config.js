@@ -26,17 +26,22 @@ module.exports = {
     extend: {
       animation: {
         width: "width 0.5s ease-in-out",
+        fadeImage: "fade 0.5s ease-in-out",
       },
       transitionProperty: {
         width: "width",
         display: "display",
       },
-      keyframes: {
+      keyframes: (theme) => ({
         width: {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
-      },
+        fade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
+        },
+      }),
       dropShadow: {
         carouselDetails: "0px 4px 4px rgba(0, 0, 0, 0.4)",
       },
@@ -45,6 +50,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    require("@tailwindcss/line-clamp"),
+  ],
   darkMode: "class",
 };
