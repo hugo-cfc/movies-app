@@ -5,11 +5,9 @@ import { HTMLAttributes, useState } from "react";
 
 import SearchIcon from "../../../../public/assets/icons/searchIcon.svg";
 
-interface InputProps {
-  inputProps?: HTMLAttributes<HTMLInputElement>;
-}
+type InputProps = HTMLAttributes<HTMLInputElement>;
 
-const Input = ({ inputProps }: InputProps) => {
+const Input = (inputProps: InputProps) => {
   const [isActive, setIsActive] = useState(false);
 
   return (

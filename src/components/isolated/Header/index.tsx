@@ -7,7 +7,7 @@ import ListMenu from "./Components/ListMenu";
 
 const Header = () => {
   return (
-    <header className="bg-black bg-opacity-30 h-[70px] flex items-center">
+    <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-[100%] h-[70px] flex items-center fixed z-10">
       <div className="w-[1280px] m-auto grid grid-cols-12 gap-4">
         <div className="flex col-start-1 col-end-1 justify-center items-center">
           <Link href="/">
@@ -23,7 +23,7 @@ const Header = () => {
         <ListMenu />
 
         <div className="col-start-10 col-end-13 flex justify-end">
-          <Input inputProps={{ placeholder: "Filme, série, ator, etc..." }} />
+          <Input placeholder="Filme, série, ator, etc..." />
         </div>
       </div>
     </header>

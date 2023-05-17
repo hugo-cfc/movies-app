@@ -1,4 +1,4 @@
-export default interface Movie {
+export default interface Media {
   adult: boolean;
   backdrop_path: string;
   id: number;
@@ -14,4 +14,5 @@ export default interface Movie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  year: string;
 }
