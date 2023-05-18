@@ -35,10 +35,10 @@ const Carousel = ({ medias }: CarouselProps) => {
 
   return (
     <div className="overflow-hidden relative">
-      <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px]">
+      <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px] ">
         <Image
           key={rand}
-          className="blur-carouselBackground animate-fadeImage"
+          className="blur-carouselBackground animate-fadeImage min-h-[1080px]"
           src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
           alt={item.title}
           fill
