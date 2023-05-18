@@ -1,16 +1,23 @@
-import DarkModeButton from "../components/isolated/DarkModeButton";
+import Media from "@/@types/media";
+import Carousel from "@/components/isolated/Carousel";
+import Header from "@/components/isolated/Header";
+import { fetchWrapper } from "@/services/fetchWrapper";
 
-export const metadata = {
-  title: "adad",
-};
+// import DarkModeButton from "../components/isolated/DarkModeButton";
 
-export default function Home() {
+// export const metadata = {
+//   title: "Movies App",
+// };
+
+export default async function Home() {
+  const { results } = await fetchWrapper<{ results: Media[] }>(
+    "/trending/movie/week"
+  );
+
   return (
     <>
-      <DarkModeButton />
-      <h1 className="text-3xl font-bold underline text-black dark:text-white">
-        Hello world!
-      </h1>
+      <Header />
+      <Carousel medias={results} />
     </>
   );
 }
