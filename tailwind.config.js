@@ -54,6 +54,7 @@ module.exports = {
     require("tailwindcss"),
     require("autoprefixer"),
     require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar-hide"),
   ],
   darkMode: "class",
 };

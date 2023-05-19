@@ -1,7 +1,10 @@
-import Media from "@/@types/media";
 import Carousel from "@/components/isolated/Carousel";
 import Header from "@/components/isolated/Header";
-import { fetchWrapper } from "@/services/fetchWrapper";
+import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
+import getTopRatedMovies from "@/fetchers/getTopRatedMovies";
+import getTrendingMovies from "@/fetchers/getTrendingMovies";
+
+import StarIcon from "../../public/assets/icons/star.svg";
 
 // import DarkModeButton from "../components/isolated/DarkModeButton";
 
@@ -10,14 +13,19 @@ import { fetchWrapper } from "@/services/fetchWrapper";
 // };
 
 export default async function Home() {
-  const { results } = await fetchWrapper<{ results: Media[] }>(
-    "/trending/movie/week"
-  );
+  const trendingMovies = await getTrendingMovies();
+  const topRatedMovies = await getTopRatedMovies();
 
   return (
     <>
       <Header />
-      <Carousel medias={results} />
+      <Carousel medias={trendingMovies} />
+      <SecondaryCarousel
+        title="Mais Bem Avaliados"
+        sectionIcon={StarIcon}
+        captionIcon={StarIcon}
+        medias={topRatedMovies}
+      />
     </>
   );
 }
