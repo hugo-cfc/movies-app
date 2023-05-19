@@ -1,26 +1,24 @@
 "use client";
 
-import Media from "@/@types/media";
 import Image, { StaticImageData } from "next/image";
-import { useCallback, useRef } from "react";
+import Link from "next/link";
+import { ReactNode, useCallback, useRef } from "react";
 
+import ShortArrowIcon from "../../../../public/assets/icons/shortArrow.svg";
 import ArrowButton from "./Components/ArrowButton";
-import Slide from "./Components/Slide";
 
 interface CarouselProps {
   sectionIcon: string | StaticImageData;
-  captionIcon?: string | StaticImageData;
   title: string;
-  medias: Media[];
-  caption?: string;
+  children: ReactNode;
+  seeMoreUrl: string;
 }
 
 const SecondaryCarousel = ({
-  medias,
   sectionIcon,
-  captionIcon,
   title,
-  caption,
+  seeMoreUrl,
+  children,
 }: CarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -34,9 +32,21 @@ const SecondaryCarousel = ({
 
   return (
     <div className="w-[1280px] m-auto h-fit mt-[4.63rem]">
-      <div className="w-full flex items-center justify-start">
-        <Image className="mr-[1.13rem]" src={sectionIcon} alt={title} />
-        <h1 className="text-white dark:text-black text-[2rem]">{title}</h1>
+      <div className="grid grid-cols-12 gap-x-4 mb-7">
+        <div className="flex items-center justify-start col-start-1 col-end-6">
+          <Image className="mr-[1.13rem] mb-2" src={sectionIcon} alt={title} />
+          <h1 className="text-white dark:text-black text-[2rem]">{title}</h1>
+        </div>
+
+        <Link
+          className="text-white text-2xl dark:text-white col-start-11 col-end-13 flex items-center"
+          href={seeMoreUrl}
+        >
+          Ver Mais
+          <Image className="ml-[0.5rem]" src={ShortArrowIcon} alt="arrow" />
+        </Link>
+
+        <div className="bg-gradient-to-t from-greenPrimary to-bluePrimary h-[2px] col-start-1 col-end-13" />
       </div>
 
       <div className="flex items-center justify-center">
@@ -47,14 +57,7 @@ const SecondaryCarousel = ({
           id="carouselContainer"
           ref={carouselRef}
         >
-          {medias.map((item) => (
-            <Slide
-              key={item.id}
-              slide={item}
-              caption={caption}
-              captionIcon={captionIcon}
-            />
-          ))}
+          {children}
         </div>
 
         <ArrowButton direction="right" onClick={handleScrollRight} />

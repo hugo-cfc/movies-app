@@ -1,10 +1,10 @@
 import Carousel from "@/components/isolated/Carousel";
 import Header from "@/components/isolated/Header";
-import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
-import getTopRatedMovies from "@/fetchers/getTopRatedMovies";
-import getTrendingMovies from "@/fetchers/getTrendingMovies";
-
-import StarIcon from "../../public/assets/icons/star.svg";
+import TopRated from "@/components/pages/Home/TopRated";
+import Upcoming from "@/components/pages/Home/Upcoming";
+import getTopRatedMovies from "@/fetchers/movies/getTopRatedMovies";
+import getTrendingMovies from "@/fetchers/movies/getTrendingMovies";
+import getUpcomingMovies from "@/fetchers/movies/getUpcomingMovies";
 
 // import DarkModeButton from "../components/isolated/DarkModeButton";
 
@@ -15,17 +15,14 @@ import StarIcon from "../../public/assets/icons/star.svg";
 export default async function Home() {
   const trendingMovies = await getTrendingMovies();
   const topRatedMovies = await getTopRatedMovies();
+  const upcomingMovies = await getUpcomingMovies();
 
   return (
     <>
       <Header />
       <Carousel medias={trendingMovies} />
-      <SecondaryCarousel
-        title="Mais Bem Avaliados"
-        sectionIcon={StarIcon}
-        captionIcon={StarIcon}
-        medias={topRatedMovies}
-      />
+      <TopRated movies={topRatedMovies} />
+      <Upcoming movies={upcomingMovies} />
     </>
   );
 }

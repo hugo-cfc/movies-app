@@ -50,7 +50,7 @@ const Carousel = ({ medias }: CarouselProps) => {
           key={item?.id}
           className="flex items-center col-start-1 col-end-10"
         >
-          <div className="mr-5 w-[13.4rem]">
+          <div className="mr-5 w-[13.4rem] pl-[2.32rem]">
             <Image
               className="w-auto h-auto"
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
