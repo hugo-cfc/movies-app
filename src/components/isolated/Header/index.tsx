@@ -3,12 +3,15 @@ import Link from "next/link";
 
 import MovieDPLogo from "../../../../public/assets/logos/movieDBLogo.svg";
 import Input from "../Input";
+import DarkBackground from "./Components/DarkBackground";
 import ListMenu from "./Components/ListMenu";
 
 const Header = () => {
   return (
     <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-[100%] h-[70px] flex items-center fixed z-10">
-      <div className="w-[1280px] m-auto grid grid-cols-12 gap-4">
+      <DarkBackground />
+
+      <div className="w-[1280px] m-auto grid grid-cols-12 gap-4 z-10">
         <div className="flex col-start-1 col-end-1 justify-center items-center">
           <Link href="/">
             <Image
