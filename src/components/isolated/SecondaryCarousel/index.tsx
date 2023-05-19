@@ -2,10 +2,11 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { ReactNode, useCallback, useRef } from "react";
+import { ReactNode, useRef } from "react";
 
 import ShortArrowIcon from "../../../../public/assets/icons/shortArrow.svg";
 import ArrowButton from "./Components/ArrowButton";
+import useSecondaruCarousel from "./useSecondaryCarousel";
 
 interface CarouselProps {
   sectionIcon: string | StaticImageData;
@@ -21,14 +22,14 @@ const SecondaryCarousel = ({
   children,
 }: CarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
-
-  const handleScrollLeft = useCallback(() => {
-    carouselRef.current?.scrollBy(-200, 0);
-  }, [carouselRef]);
-
-  const handleScrollRight = useCallback(() => {
-    carouselRef.current?.scrollBy(200, 0);
-  }, [carouselRef]);
+  const {
+    handleScrollLeft,
+    handleScrollRight,
+    isScrollAtLeft,
+    isScrollAtRight,
+  } = useSecondaruCarousel({
+    carouselRef,
+  });
 
   return (
     <div className="w-[1280px] m-auto h-fit mt-[4.63rem]">
@@ -50,7 +51,10 @@ const SecondaryCarousel = ({
       </div>
 
       <div className="flex items-center justify-center">
-        <ArrowButton onClick={handleScrollLeft} />
+        <ArrowButton
+          onClick={handleScrollLeft}
+          breakDirection={isScrollAtLeft}
+        />
 
         <div
           className="overflow-x-auto flex gap-[0.94rem] snap-mandatory scroll-smooth snap-x scrollbar-hide ml-[1.69rem] mr-[1.96rem]"
@@ -60,7 +64,11 @@ const SecondaryCarousel = ({
           {children}
         </div>
 
-        <ArrowButton direction="right" onClick={handleScrollRight} />
+        <ArrowButton
+          direction="right"
+          onClick={handleScrollRight}
+          breakDirection={isScrollAtRight}
+        />
       </div>
     </div>
   );
