@@ -11,7 +11,6 @@ import CarouselIndicator from "./Components/CarouselIndicator";
 interface CarouselProps {
   medias: Media[];
 }
-
 const Carousel = ({ medias }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const item = medias[activeIndex];
@@ -38,7 +37,7 @@ const Carousel = ({ medias }: CarouselProps) => {
       <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px] ">
         <Image
           key={rand}
-          className="blur-carouselBackground animate-fadeImage min-h-[1080px]"
+          className="blur-carouselBackground animate-fadeImage h-[1080px]"
           src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
           alt={item.title}
           fill
