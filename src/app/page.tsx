@@ -11,9 +11,9 @@ import getTrendingPeople from "@/fetchers/people/getTrendingPeople";
 
 // import DarkModeButton from "../components/isolated/DarkModeButton";
 
-// export const metadata = {
-//   title: "Movies App",
-// };
+export const metadata = {
+  title: "Movies App",
+};
 
 export default async function Home() {
   const trendingMovies = await getTrendingMovies();

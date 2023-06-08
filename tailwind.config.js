@@ -9,6 +9,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'tablet': "767px",
+      "notebook": "1024px",
+      lg: "992px",
+      xl: "1200px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

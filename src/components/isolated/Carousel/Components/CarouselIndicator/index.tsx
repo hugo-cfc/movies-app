@@ -27,7 +27,7 @@ const CarouselIndicator = ({
           fill
         />
       </div>
-      <h1 className="text-white text-xl relative z-10 text-center">{title}</h1>
+      <h1 className="text-white text-xl relative z-[1] text-center">{title}</h1>
       {isActive && (
         <div className="absolute bottom-0 w-full bg-gradient-to-r from-greenPrimary to-bluePrimary h-[4px]" />
       )}
