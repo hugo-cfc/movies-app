@@ -33,7 +33,7 @@ const Carousel = ({ medias }: CarouselProps) => {
   }, []);
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative h-[702px]">
       <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px] ">
         <Image
           key={rand}
@@ -44,12 +44,12 @@ const Carousel = ({ medias }: CarouselProps) => {
         />
       </div>
 
-      <div className="w-[1280px] m-auto mt-14 pt-20 relative grid grid-cols-12 gap-4">
+      <div className="w-[1280px] h-[650px] m-auto mt-14 pt-20 relative grid grid-cols-12 gap-4">
         <div
           key={item?.id}
           className="flex items-center col-start-1 col-end-10"
         >
-          <div className="mr-5 w-[13.4rem] pl-[2.32rem]">
+          <div className="mr-5 w-[13.4rem] h-[266px] pl-[2.32rem]">
             <Image
               className="w-auto h-auto"
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
@@ -75,7 +75,7 @@ const Carousel = ({ medias }: CarouselProps) => {
               </span>
             </div>
 
-            <p className="text-white text-base drop-shadow-carouselDetails w-[27rem] max-h-32 overflow-hidden line-clamp-5">
+            <p className="text-white text-base drop-shadow-carouselDetails w-[27rem] max-h-24 overflow-hidden line-clamp-4">
               {item.overview}
             </p>
 

@@ -9,7 +9,7 @@ const ListMenu = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center col-start-2 col-end-6">
+    <div className="hidden tablet:flex tablet:items-center tablet:col-start-2 tablet:col-end-6">
       <ul className="flex flex-wrap items-center justify-center text-gray-900 dark:text-white">
         {menuItems.map((item) => (
           <li key={item.id} className="w-[70px] ">
