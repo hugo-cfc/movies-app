@@ -27,7 +27,7 @@ const Input = (inputProps: InputProps) => {
             ></input>
 
             <Image
-              className="w-[15px]"
+              className="w-[20px]"
               src={SearchIcon}
               alt="Pesquisar"
               priority
@@ -46,12 +46,12 @@ const Input = (inputProps: InputProps) => {
             />
           </button>
 
-          <div className="absolute animate-fadeImage block top-[50px] left-0 w-screen h-[50px] tablet:hidden">
+          <div className="absolute animate-fadeImage block top-[75px] left-0 w-screen h-[50px] tablet:hidden">
             <div className="flex bg-black bg-opacity-30 border-bluePrimary border-2 rounded-3xl overflow-hidden pr-2 w-[100%]">
               <DarkBackground />
               <input
                 type="text"
-                className="bg-transparent text-sm placeholder:text-gray placeholder:text-sm px-2 py-1 flex-1 outline-none text-white"
+                className="bg-transparent text-sm placeholder:text-gray placeholder:text-sm px-2 py-2 flex-1 outline-none text-white"
                 onBlur={() => setIsActive((prevState) => !prevState)}
                 autoFocus
                 {...inputProps}

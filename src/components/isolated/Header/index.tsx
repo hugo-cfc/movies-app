@@ -9,7 +9,7 @@ import MobileMenu from "./Components/MobileMenu";
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-screen h-[50px] flex items-center fixed z-10 notebook:h-[70px]">
+    <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-screen h-[70px] flex items-center fixed z-10">
       <DarkBackground />
 
       <div className="w-screen px-4 grid grid-cols-4 z-10 tablet:grid-cols-8 tablet:gap-2 tablet:w-[620px] tablet:m-auto notebook:w-[1280px] notebook:gap-4 notebook:grid-cols-12">
@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex justify-center items-center col-start-2 col-end-4 tablet:col-start-1 tablet:col-end-1 tablet:justify-start">
           <Link href="/">
             <Image
-              className="w-[30px] notebook:w-[50px]"
+              className="w-[50px]"
               src={MovieDPLogo}
               alt="Movie DB"
               priority
