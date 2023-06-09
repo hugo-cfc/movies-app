@@ -33,7 +33,7 @@ const Carousel = ({ medias }: CarouselProps) => {
   }, []);
 
   return (
-    <div className="overflow-hidden relative h-[702px]">
+    <div className="overflow-hidden relative tablet:h-[702px]">
       <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px] ">
         <Image
           key={rand}
@@ -44,12 +44,12 @@ const Carousel = ({ medias }: CarouselProps) => {
         />
       </div>
 
-      <div className="w-[1280px] h-[650px] m-auto mt-14 pt-20 relative grid grid-cols-12 gap-4">
+      <div className="w-[300px] h-[700px] m-auto pt-20 relative tablet:grid table:mt-14 notebook:w-[1280px] notebook:grid-cols-12 notebook:gap-4">
         <div
           key={item?.id}
-          className="flex items-center col-start-1 col-end-10"
+          className="flex items-center flex-col tablet:flex-row notebook:col-start-1 notebook:col-end-10"
         >
-          <div className="mr-5 w-[13.4rem] h-[266px] pl-[2.32rem]">
+          <div className="flex mb-4 w-[211px] h-[316px] tablet:mb-0 tablet:mr-5">
             <Image
               className="w-auto h-auto"
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
@@ -59,23 +59,23 @@ const Carousel = ({ medias }: CarouselProps) => {
             />
           </div>
 
-          <div className="flex flex-col justify-start">
-            <h1 className="text-white text-2xl drop-shadow-carouselDetails">
+          <div className="flex flex-col justify-start items-center tablet:items-start">
+            <h1 className="text-white text-xl text-center drop-shadow-carouselDetails tablet:text-2xl tablet:text-left">
               {item?.title}
             </h1>
 
-            <h1 className="text-white text-2xl drop-shadow-carouselDetails">
+            <h1 className="hidden tablet:flex text-white text-2xl drop-shadow-carouselDetails">
               {item?.year}
             </h1>
 
-            <div className="flex justify-center items-center w-[fit-content]">
+            <div className="hidden tablet:flex justify-center items-center w-[fit-content]">
               <Image className="w-[50px]" src={StarIcon} alt="Star" priority />
               <span className="text-white text-2xl drop-shadow-carouselDetails">
                 {item.vote_average.toFixed(2)}
               </span>
             </div>
 
-            <p className="text-white text-base drop-shadow-carouselDetails w-[27rem] max-h-24 overflow-hidden line-clamp-4">
+            <p className="hidden tablet:flex text-white text-base drop-shadow-carouselDetails w-[27rem] max-h-24 overflow-hidden line-clamp-4">
               {item.overview}
             </p>
 
@@ -83,7 +83,7 @@ const Carousel = ({ medias }: CarouselProps) => {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col col-start-1 col-end-13">
+        <div className="mt-4 tablet:mt-16 flex flex-col col-start-1 col-end-13">
           <h2 className="text-white text-xl drop-shadow-carouselDetails mb-4">
             Trending
           </h2>
