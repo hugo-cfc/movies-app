@@ -10,9 +10,9 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'tablet': "767px",
+      'tablet': "670px",
       "notebook": "1024px",
-      "desktop": "1240px",
+      "desktop": "1300px",
       "ultrawide": "1920px",
     },
     colors: {
