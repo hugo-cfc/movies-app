@@ -34,17 +34,20 @@ const Carousel = ({ medias }: CarouselProps) => {
 
   return (
     <div className="overflow-hidden relative tablet:h-[702px]">
-      <div className="absolute top-[-35%] left-0 z-0 w-[1920px] h-[1080px] ">
+      <div className="absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%]">
         <Image
           key={rand}
-          className="blur-carouselBackground animate-fadeImage h-[1080px]"
+          className="blur-carouselBackground animate-fadeImage"
           src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
           alt={item.title}
           fill
+          sizes="100vw"
+          quality={30}
+          priority={true}
         />
       </div>
 
-      <div className="w-[300px] h-[700px] m-auto pt-20 relative tablet:grid table:mt-14 notebook:w-[1280px] notebook:grid-cols-12 notebook:gap-4">
+      <div className="w-[300px] h-[700px] m-auto pt-20 relative tablet:grid table:mt-14 notebook:w-[1280px] tablet:w-[620px] notebook:grid-cols-12 notebook:gap-4">
         <div
           key={item?.id}
           className="flex items-center flex-col tablet:flex-row notebook:col-start-1 notebook:col-end-10"
@@ -56,26 +59,32 @@ const Carousel = ({ medias }: CarouselProps) => {
               alt={item.title}
               width={211}
               height={316}
+              priority={true}
             />
           </div>
 
           <div className="flex flex-col justify-start items-center tablet:items-start">
-            <h1 className="text-white text-xl text-center drop-shadow-carouselDetails tablet:text-2xl tablet:text-left">
+            <h1 className="text-white text-xl text-center drop-shadow-carouselDetails tablet:text-xl tablet:text-left notebook:text-2xl">
               {item?.title}
             </h1>
 
-            <h1 className="hidden tablet:flex text-white text-2xl drop-shadow-carouselDetails">
+            <h1 className="hidden text-white drop-shadow-carouselDetails tablet:flex  tablet:text-xl notebook:text-2xl">
               {item?.year}
             </h1>
 
             <div className="hidden tablet:flex justify-center items-center w-[fit-content]">
-              <Image className="w-[50px]" src={StarIcon} alt="Star" priority />
-              <span className="text-white text-2xl drop-shadow-carouselDetails">
+              <Image
+                className="tablet:w-[30px] notebook:w-[50px]"
+                src={StarIcon}
+                alt="Star"
+                priority
+              />
+              <span className="text-white drop-shadow-carouselDetails tablet:text-xl notebook:text-2xl">
                 {item.vote_average.toFixed(2)}
               </span>
             </div>
 
-            <p className="hidden tablet:flex text-white text-base drop-shadow-carouselDetails w-[27rem] max-h-24 overflow-hidden line-clamp-4">
+            <p className="hidden tablet:line-clamp-4 text-white text-xs drop-shadow-carouselDetails w-[27rem] max-h-24 overflow-hidden notebook:text-base">
               {item.overview}
             </p>
 
