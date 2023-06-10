@@ -33,7 +33,7 @@ const Carousel = ({ medias }: CarouselProps) => {
   }, []);
 
   return (
-    <div className="overflow-hidden relative tablet:h-[702px]">
+    <div className="overflow-hidden relative tablet:h-[702px] notebook:px-4 desktop:px-0">
       <div className="absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%]">
         <Image
           key={rand}
@@ -41,13 +41,13 @@ const Carousel = ({ medias }: CarouselProps) => {
           src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
           alt={item.title}
           fill
-          sizes="100vw"
+          sizes="10vw"
           quality={30}
           priority={true}
         />
       </div>
 
-      <div className="w-[300px] h-[700px] m-auto pt-20 relative tablet:grid table:mt-14 notebook:w-[1280px] tablet:w-[620px] notebook:grid-cols-12 notebook:gap-4">
+      <div className="w-[300px] h-[700px] m-auto pt-20 relative tablet:grid table:mt-14 tablet:w-[620px] notebook:w-[978px] notebook:grid-cols-12 notebook:gap-4 desktop:w-[1280px]">
         <div
           key={item?.id}
           className="flex items-center flex-col tablet:flex-row notebook:col-start-1 notebook:col-end-10"

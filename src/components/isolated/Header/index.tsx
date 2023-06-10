@@ -12,7 +12,7 @@ const Header = () => {
     <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-screen h-[70px] flex items-center fixed z-10">
       <DarkBackground />
 
-      <div className="w-screen px-4 grid grid-cols-4 z-10 tablet:grid-cols-8 tablet:gap-2 tablet:w-[620px] tablet:m-auto notebook:w-[1280px] notebook:gap-4 notebook:grid-cols-12">
+      <div className="w-screen px-4 grid grid-cols-4 z-10 tablet:grid-cols-8 tablet:gap-2 tablet:w-[620px] tablet:m-auto notebook:w-[1280px] notebook:gap-4 notebook:grid-cols-12 notebook:px-4 desktop:px-0">
         <MobileMenu />
 
         <div className="flex justify-center items-center col-start-2 col-end-4 tablet:col-start-1 tablet:col-end-1 tablet:justify-start">
