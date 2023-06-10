@@ -15,11 +15,11 @@ const MobileMenu = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="flex tablet:hidden items-center col-start-1 col-end-2">
+    <div className="flex items-center col-start-1 col-end-2 tablet:hidden">
       {!isActive ? (
         <button onClick={() => setIsActive((prevState) => !prevState)}>
           <Image
-            className="w-[20px]"
+            className="w-[25px]"
             src={MenuIcon}
             alt="Abrir menu"
             priority
@@ -28,13 +28,13 @@ const MobileMenu = () => {
       ) : (
         <div className="absolute top-0 left-0 w-screen h-screen z-20 bg-black bg-opacity-80 animate-fadeImage">
           <div>
-            <div className="bg-black w-screen h-[50px] grid grid-cols-4 items-center px-2">
+            <div className="bg-black w-screen h-[70px] grid grid-cols-4 items-center px-2">
               <button
                 className="flex justify-center items-center col-start-1 col-end-2"
                 onClick={() => setIsActive((prevState) => !prevState)}
               >
                 <Image
-                  className="w-[15px]"
+                  className="w-[20px]"
                   src={CloseIcon}
                   alt="Fechar menu"
                   priority
@@ -44,7 +44,7 @@ const MobileMenu = () => {
               <div className="flex justify-center items-center col-start-4 col-end-5 tablet:col-start-1 tablet:col-end-1">
                 <Link href="/">
                   <Image
-                    className="w-[30px]"
+                    className="w-[50px]"
                     src={MovieDPLogo}
                     alt="Movie DB"
                     priority
