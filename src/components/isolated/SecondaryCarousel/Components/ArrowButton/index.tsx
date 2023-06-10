@@ -27,7 +27,7 @@ const ArrowButton = ({
         !breakDirection &&
         "transition ease-in-out hover:brightness-[0.8] hover:scale-110 active:brightness-50"
       }
-      ${breakDirection && "opacity-30"}`}
+      ${breakDirection && "opacity-30"} ${rest.className}`}
       onClick={onClick}
       disabled={breakDirection}
     >
