@@ -34,7 +34,7 @@ const Carousel = ({ medias }: CarouselProps) => {
 
   return (
     <div className="overflow-hidden relative tablet:h-[702px] notebook:px-4 desktop:px-0">
-      <div className="absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%]">
+      <div className="absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%] ultrawide:left-1/2 ultrawide:-translate-x-1/2">
         <Image
           key={rand}
           className="blur-carouselBackground animate-fadeImage"
