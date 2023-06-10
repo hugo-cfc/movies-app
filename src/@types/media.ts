@@ -15,4 +15,5 @@ export default interface Media {
   vote_average: number;
   vote_count: number;
   year: string;
+  [key: string]: string | number | boolean | Array<unknown>;
 }

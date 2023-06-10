@@ -9,6 +9,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'tablet': "670px",
+      "notebook": "1024px",
+      "desktop": "1300px",
+      "ultrawide": "1920px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -54,6 +60,7 @@ module.exports = {
     require("tailwindcss"),
     require("autoprefixer"),
     require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar-hide"),
   ],
   darkMode: "class",
 };
