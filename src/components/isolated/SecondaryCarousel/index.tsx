@@ -32,7 +32,7 @@ const SecondaryCarousel = ({
   });
 
   return (
-    <div className="w-[300px] m-auto h-fit mt-8 tablet:mt-12 tablet:w-[620px] notebook:w-[1024px] px-4 desktop:w-[1280px]">
+    <div className="w-[300px] m-auto h-fit mt-8 tablet:mt-12 tablet:w-[620px] notebook:w-[1024px] desktop:w-[1280px]">
       <div className="grid grid-cols-4 tablet:grid-cols-8 notebook:grid-cols-12 notebook:gap-x-4 mb-7">
         <div className="flex items-center justify-start col-start-1 col-end-4 tablet:col-end-6 notebook:col-end-6">
           <Image
