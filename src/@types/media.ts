@@ -2,6 +2,7 @@ export default interface Media {
   adult: boolean;
   backdrop_path: string;
   id: number;
+  name: string;
   title: string;
   original_language: string;
   original_title: string;
