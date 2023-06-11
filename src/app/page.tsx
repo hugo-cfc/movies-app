@@ -1,6 +1,4 @@
 import Carousel from "@/components/isolated/Carousel";
-import Footer from "@/components/isolated/Footer";
-import Header from "@/components/isolated/Header";
 import TrendingPeople from "@/components/pages/Home/PeopleTreding";
 import TopRated from "@/components/pages/Home/TopRated";
 import Upcoming from "@/components/pages/Home/Upcoming";
@@ -23,12 +21,10 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
       <Carousel medias={trendingMovies} />
       <TopRated movies={topRatedMovies} />
       <Upcoming movies={upcomingMovies} />
       <TrendingPeople people={trendingPeople} />
-      <Footer />
     </>
   );
 }

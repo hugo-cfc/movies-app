@@ -9,9 +9,4 @@ export const menuItems: { id: string; title: string; path: string }[] = [
     title: "Séries",
     path: "/series",
   },
-  {
-    id: crypto.randomUUID(),
-    title: "TV",
-    path: "/tv-shows",
-  },
 ];

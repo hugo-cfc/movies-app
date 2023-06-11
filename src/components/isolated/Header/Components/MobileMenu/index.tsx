@@ -28,9 +28,9 @@ const MobileMenu = () => {
       ) : (
         <div className="absolute top-0 left-0 w-screen h-screen z-20 bg-black bg-opacity-80 animate-fadeImage">
           <div>
-            <div className="bg-black w-screen h-[70px] grid grid-cols-4 items-center px-2">
+            <div className="bg-black w-screen h-[70px] grid grid-cols-4 items-center px-5">
               <button
-                className="flex justify-center items-center col-start-1 col-end-2"
+                className="flex justify-start items-center col-start-1 col-end-2"
                 onClick={() => setIsActive((prevState) => !prevState)}
               >
                 <Image
@@ -41,7 +41,7 @@ const MobileMenu = () => {
                 />
               </button>
 
-              <div className="flex justify-center items-center col-start-4 col-end-5 tablet:col-start-1 tablet:col-end-1">
+              <div className="flex justify-end items-center col-start-4 col-end-5 tablet:col-start-1 tablet:col-end-1">
                 <Link href="/">
                   <Image
                     className="w-[50px]"
