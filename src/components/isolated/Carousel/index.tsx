@@ -34,12 +34,16 @@ const Carousel = ({ medias }: CarouselProps) => {
 
   return (
     <div className="overflow-hidden relative tablet:h-[702px] notebook:px-4 desktop:px-0">
-      <div className="absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%] ultrawide:left-1/2 ultrawide:-translate-x-1/2">
+      <div
+        className={`absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%] ultrawide:left-1/2 ultrawide:-translate-x-1/2 ${
+          !item.backdrop_path && "bg-white"
+        }`}
+      >
         <Image
           key={rand}
           className="blur-carouselBackground animate-fadeImage"
           src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
-          alt={item.title}
+          alt={item.title || item.name || "Sem imagem"}
           fill
           sizes="10vw"
           quality={30}
@@ -56,7 +60,7 @@ const Carousel = ({ medias }: CarouselProps) => {
             <Image
               className="w-auto h-auto"
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-              alt={item.title}
+              alt={item.title || item.name || "Sem imagem"}
               width={211}
               height={316}
               priority={true}
@@ -65,7 +69,7 @@ const Carousel = ({ medias }: CarouselProps) => {
 
           <div className="flex flex-col justify-start items-center tablet:items-start">
             <h1 className="text-white text-xl text-center drop-shadow-carouselDetails tablet:text-xl tablet:text-left notebook:text-2xl">
-              {item?.title}
+              {item?.title || item.name}
             </h1>
 
             <h1 className="hidden text-white drop-shadow-carouselDetails tablet:flex  tablet:text-xl notebook:text-2xl">
@@ -103,7 +107,7 @@ const Carousel = ({ medias }: CarouselProps) => {
               return (
                 <CarouselIndicator
                   key={carouselItem.id}
-                  title={carouselItem.title}
+                  title={carouselItem?.title || carouselItem?.name}
                   backdrop_path={carouselItem.backdrop_path}
                   isActive={index === activeIndex}
                   onClick={() => setActiveIndex(index)}
