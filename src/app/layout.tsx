@@ -1,3 +1,5 @@
+import Footer from "@/components/isolated/Footer";
+import Header from "@/components/isolated/Header";
 import { Metadata } from "next";
 import "./globals.css";
 import { Rambla } from "next/font/google";
@@ -27,7 +29,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={rambla.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
