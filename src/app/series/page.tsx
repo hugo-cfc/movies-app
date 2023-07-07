@@ -12,13 +12,15 @@ export const metadata = {
 };
 
 export default async function Series() {
-  const trendingMovies = await getTrendingSeries();
-  const topRatedSeries = await getTopRatedSeries();
-  const popularSeries = await getPopularSeries();
+  const [trendingSeries, topRatedSeries, popularSeries] = await Promise.all([
+    getTrendingSeries(),
+    getTopRatedSeries(),
+    getPopularSeries(),
+  ]);
 
   return (
     <>
-      <Carousel medias={trendingMovies} />
+      <Carousel medias={trendingSeries} />
       <TopRated series={topRatedSeries} />
       <Popular series={popularSeries} />
     </>
