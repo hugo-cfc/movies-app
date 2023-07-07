@@ -35,9 +35,7 @@ const Carousel = ({ medias }: CarouselProps) => {
   return (
     <div className="overflow-hidden relative tablet:h-[702px] notebook:px-4 desktop:px-0">
       <div
-        className={`absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%] ultrawide:left-1/2 ultrawide:-translate-x-1/2 ${
-          !item.backdrop_path && "bg-white"
-        }`}
+        className={`absolute top-0 left-[-50%] z-0 aspect-video h-[700px] tablet:h-[1080px] tablet:left-0 tablet:top-[-35%] ultrawide:left-1/2 ultrawide:-translate-x-1/2`}
       >
         <Image
           key={rand}
@@ -48,6 +46,8 @@ const Carousel = ({ medias }: CarouselProps) => {
           sizes="10vw"
           quality={30}
           priority={true}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0sAv8DwADRQHI9WZCUQAAAABJRU5ErkJggg=="
         />
       </div>
 
@@ -58,12 +58,14 @@ const Carousel = ({ medias }: CarouselProps) => {
         >
           <div className="flex mb-4 w-[211px] h-[316px] tablet:mb-0 tablet:mr-5">
             <Image
-              className="w-auto h-auto"
+              className="w-full h-full"
               src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
               alt={item.title || item.name || "Sem imagem"}
               width={211}
               height={316}
               priority={true}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0sAv8DwADRQHI9WZCUQAAAABJRU5ErkJggg=="
             />
           </div>
 
