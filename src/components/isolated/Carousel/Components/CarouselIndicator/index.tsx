@@ -34,6 +34,8 @@ const CarouselIndicator = ({
           sizes="25vw"
           quality={10}
           priority={true}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0sAv8DwADRQHI9WZCUQAAAABJRU5ErkJggg=="
         />
       </div>
       <h1 className="hidden text-white relative z-[1] text-center tablet:block tablet:text-[10px] leading-[10px] notebook:text-lg desktop:text-xl">
