@@ -14,10 +14,13 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const trendingMovies = await getTrendingMovies();
-  const topRatedMovies = await getTopRatedMovies();
-  const upcomingMovies = await getUpcomingMovies();
-  const trendingPeople = await getTrendingPeople();
+  const [trendingMovies, topRatedMovies, upcomingMovies, trendingPeople] =
+    await Promise.all([
+      getTrendingMovies(),
+      getTopRatedMovies(),
+      getUpcomingMovies(),
+      getTrendingPeople(),
+    ]);
 
   return (
     <>
