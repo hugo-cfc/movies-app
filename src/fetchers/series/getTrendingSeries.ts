@@ -1,5 +1,5 @@
-import Media from "@/@types/media";
 import { fetchWrapper } from "@/services/fetchWrapper";
+import Media from "@/types/media";
 
 const getTrendingSeries = async () => {
   const { results } = await fetchWrapper<{ results: Media[] }>(

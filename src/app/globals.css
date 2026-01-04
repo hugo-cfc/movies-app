@@ -1,9 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "tailwind-scrollbar-hide";
+
+@theme {
+  /* breakpoints */
+  --breakpoint-tablet: 670px;
+  --breakpoint-notebook: 1024px;
+  --breakpoint-desktop: 1300px;
+  --breakpoint-ultrawide: 1920px;
+
+  /* colors */
+  --color-greenPrimary: #8fcea2;
+  --color-bluePrimary: #04b4e4;
+  --color-yellow: #fff500;
+  --color-gray: #afafaf;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-background-backgroundDark: #161616;
+  --color-background-backgroundLight: #1c1c1c;
+
+  /* animations */
+  --animate-width: width 0.5s ease-in-out;
+  --animate-fadeImage: fade 0.5s ease-in-out;
+
+  /* transitions */
+  --transition-property-width: width;
+  --transition-property-display: display;
+
+  /* effects */
+  --drop-shadow-carouselDetails: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  --blur-carouselBackground: 9px;
+}
+
+@keyframes width {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 html,
 body {
   font-family: "Rambla", sans-serif;
   scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
 }

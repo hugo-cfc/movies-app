@@ -1,12 +1,18 @@
-import { RefObject, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-interface UseSecondaryCarousel {
-  carouselRef: RefObject<HTMLDivElement>;
-}
+export default function useSecondaruCarousel() {
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-const useSecondaruCarousel = ({ carouselRef }: UseSecondaryCarousel) => {
   const [isScrollAtLeft, setIsScrollAtLeft] = useState(true);
   const [isScrollAtRight, setIsScrollAtRight] = useState(false);
+
+  const handleScrollLeft = useCallback(() => {
+    carouselRef.current?.scrollBy(-200, 0);
+  }, [carouselRef]);
+
+  const handleScrollRight = useCallback(() => {
+    carouselRef.current?.scrollBy(200, 0);
+  }, [carouselRef]);
 
   useEffect(() => {
     function handleScroll() {
@@ -29,20 +35,11 @@ const useSecondaruCarousel = ({ carouselRef }: UseSecondaryCarousel) => {
     };
   }, []);
 
-  const handleScrollLeft = useCallback(() => {
-    carouselRef.current?.scrollBy(-200, 0);
-  }, [carouselRef]);
-
-  const handleScrollRight = useCallback(() => {
-    carouselRef.current?.scrollBy(200, 0);
-  }, [carouselRef]);
-
   return {
-    handleScrollLeft,
-    handleScrollRight,
+    carouselRef,
     isScrollAtLeft,
     isScrollAtRight,
+    handleScrollLeft,
+    handleScrollRight,
   };
-};
-
-export default useSecondaruCarousel;
+}

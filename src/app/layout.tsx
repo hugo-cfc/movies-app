@@ -23,15 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      className="bg-background-backgroundDark"
-      lang="PT-BR"
-      suppressHydrationWarning
-    >
-      <body className={rambla.className}>
+    <html className="bg-background-backgroundDark" lang="PT-BR">
+      <body className={`${rambla.className} min-h-screen flex flex-col`}>
         <Providers>
           <Header />
+
           {children}
+
           <Footer />
         </Providers>
       </body>

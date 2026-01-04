@@ -1,6 +1,6 @@
-import Media from "@/@types/media";
 import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
 import Slide from "@/components/isolated/Slide";
+import Media from "@/types/media";
 import formatDate from "@/utils/formatDate";
 
 import ComingIcon from "../../../../../public/assets/icons/comingIcon.svg";
@@ -9,7 +9,7 @@ interface UpcomingProps {
   movies: Media[];
 }
 
-const Upcoming = ({ movies }: UpcomingProps) => {
+export default function Upcoming({ movies }: UpcomingProps) {
   return (
     <SecondaryCarousel
       sectionIcon={ComingIcon}
@@ -26,6 +26,4 @@ const Upcoming = ({ movies }: UpcomingProps) => {
       ))}
     </SecondaryCarousel>
   );
-};
-
-export default Upcoming;
+}

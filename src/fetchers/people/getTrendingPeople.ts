@@ -1,4 +1,4 @@
-import People from "@/@types/people";
+import People from "@/types/people";
 import { fetchWrapper } from "@/services/fetchWrapper";
 
 const getTrendingPeople = async () => {

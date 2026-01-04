@@ -22,7 +22,7 @@ const DarkBackground = () => {
 
   return (
     <div
-      className={`absolute w-full h-full z-[1] ${
+      className={`absolute w-full h-full z-1 ${
         isTopOnThePage != 0 && "bg-black opacity-60"
       }`}
     />

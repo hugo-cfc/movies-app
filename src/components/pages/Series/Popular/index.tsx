@@ -1,4 +1,4 @@
-import Media from "@/@types/media";
+import Media from "@/types/media";
 import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
 import Slide from "@/components/isolated/Slide";
 

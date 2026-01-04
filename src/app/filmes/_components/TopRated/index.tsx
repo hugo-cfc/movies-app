@@ -1,6 +1,6 @@
-import Media from "@/@types/media";
 import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
 import Slide from "@/components/isolated/Slide";
+import Media from "@/types/media";
 
 import StarIcon from "../../../../../public/assets/icons/star.svg";
 
@@ -8,14 +8,14 @@ interface TopRatedProps {
   movies: Media[];
 }
 
-const TopRated = ({ movies }: TopRatedProps) => {
+export default function TopRated({ movies }: TopRatedProps) {
   return (
     <SecondaryCarousel
       sectionIcon={StarIcon}
       title="Mais Bem Avaliados"
       seeMoreUrl="/top-rated-movies"
     >
-      {movies.map((movie) => (
+      {movies?.map((movie) => (
         <Slide
           key={movie.id}
           media={movie}
@@ -26,6 +26,4 @@ const TopRated = ({ movies }: TopRatedProps) => {
       ))}
     </SecondaryCarousel>
   );
-};
-
-export default TopRated;
+}

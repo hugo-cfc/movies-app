@@ -1,4 +1,4 @@
-import Media from "@/@types/media";
+import Media from "@/types/media";
 import { fetchWrapper } from "@/services/fetchWrapper";
 
 const getPopularSeries = async () => {

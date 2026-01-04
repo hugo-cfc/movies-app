@@ -9,16 +9,16 @@ import MobileMenu from "./Components/MobileMenu";
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-b from-black to-transparent bg-opacity-30 w-screen h-[70px] flex items-center fixed z-10">
+    <header className="bg-linear-to-b from-black to-transparent bg-opacity-30 w-screen h-17.5 flex items-center fixed z-10">
       <DarkBackground />
 
-      <div className="w-screen px-4 grid grid-cols-4 z-10 tablet:grid-cols-8 tablet:gap-2 tablet:w-[620px] tablet:m-auto notebook:w-[1280px] notebook:gap-4 notebook:grid-cols-12 notebook:px-4 desktop:px-0">
+      <div className="w-screen px-4 grid grid-cols-4 z-10 tablet:grid-cols-8 tablet:gap-2 tablet:w-155 tablet:m-auto notebook:w-7xl notebook:gap-4 notebook:grid-cols-12 notebook:px-4 desktop:px-0">
         <MobileMenu />
 
         <div className="flex justify-center items-center col-start-2 col-end-4 tablet:col-start-1 tablet:col-end-1 tablet:justify-start">
           <Link href="/">
             <Image
-              className="w-[50px]"
+              className="w-12.5"
               src={MovieDPLogo}
               alt="Movie DB"
               priority

@@ -1,6 +1,6 @@
-import People from "@/@types/people";
 import SecondaryCarousel from "@/components/isolated/SecondaryCarousel";
 import Slide from "@/components/isolated/Slide";
+import People from "@/types/people";
 
 import ComingIcon from "../../../../../public/assets/icons/trendingPeople.svg";
 
@@ -8,7 +8,7 @@ interface TrendingPeopleProps {
   people: People[];
 }
 
-const TrendingPeople = ({ people }: TrendingPeopleProps) => {
+export default function TrendingPeople({ people }: TrendingPeopleProps) {
   return (
     <SecondaryCarousel
       sectionIcon={ComingIcon}
@@ -25,6 +25,4 @@ const TrendingPeople = ({ people }: TrendingPeopleProps) => {
       ))}
     </SecondaryCarousel>
   );
-};
-
-export default TrendingPeople;
+}

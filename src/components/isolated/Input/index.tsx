@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { HTMLAttributes, useState } from "react";
+import { InputHTMLAttributes, useState } from "react";
 
 import CloseIcon from "../../../../public/assets/icons/closeIcon.svg";
 import SearchIcon from "../../../../public/assets/icons/searchIcon.svg";
 import DarkBackground from "../Header/Components/DarkBackground";
 
-type InputProps = HTMLAttributes<HTMLInputElement>;
+type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
 const Input = (inputProps: InputProps) => {
   const [isActive, setIsActive] = useState(false);
@@ -16,7 +16,7 @@ const Input = (inputProps: InputProps) => {
       {isActive ? (
         <>
           <div
-            className={`hidden bg-black bg-opacity-30 border-bluePrimary border-2 rounded-3xl overflow-hidden pr-2 w-[100%] animate-[width_0.5s_ease-in-out] tablet:flex tablet:h-[30px] notebook:h-full`}
+            className={`hidden bg-black bg-opacity-30 border-bluePrimary border-2 rounded-3xl overflow-hidden pr-2 w-full animate-width tablet:flex tablet:h-7.5 notebook:h-full`}
           >
             <input
               type="text"
@@ -26,12 +26,7 @@ const Input = (inputProps: InputProps) => {
               {...inputProps}
             ></input>
 
-            <Image
-              className="w-[20px]"
-              src={SearchIcon}
-              alt="Pesquisar"
-              priority
-            />
+            <Image className="w-5" src={SearchIcon} alt="Pesquisar" priority />
           </div>
 
           <button
@@ -39,15 +34,15 @@ const Input = (inputProps: InputProps) => {
             onClick={() => setIsActive((prevState) => !prevState)}
           >
             <Image
-              className="w-[20px]"
+              className="w-5"
               src={CloseIcon}
               alt="Fechar pesquisa"
               priority
             />
           </button>
 
-          <div className="absolute animate-fadeImage block top-[75px] left-0 w-screen h-[50px] tablet:hidden">
-            <div className="flex bg-black bg-opacity-30 border-bluePrimary border-2 rounded-3xl overflow-hidden pr-2 w-[100%]">
+          <div className="absolute animate-fadeImage block top-18.75 left-0 w-screen h-12.5 tablet:hidden">
+            <div className="flex bg-black bg-opacity-30 border-bluePrimary border-2 rounded-3xl overflow-hidden pr-2 w-full">
               <DarkBackground />
               <input
                 type="text"
@@ -58,7 +53,7 @@ const Input = (inputProps: InputProps) => {
               ></input>
 
               <Image
-                className="w-[15px]"
+                className="w-3.75"
                 src={SearchIcon}
                 alt="Pesquisar"
                 priority
@@ -72,7 +67,7 @@ const Input = (inputProps: InputProps) => {
           onClick={() => setIsActive((prevState) => !prevState)}
         >
           <Image
-            className="w-[20px] tablet:w-[15px] notebook:w-[20px]"
+            className="w-5 tablet:w-3.75 notebook:w-5 cursor-pointer"
             src={SearchIcon}
             alt="Pesquisar"
             priority

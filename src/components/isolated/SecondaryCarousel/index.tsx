@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { ReactNode, useRef } from "react";
+import { ReactNode } from "react";
 
 import ShortArrowIcon from "../../../../public/assets/icons/shortArrow.svg";
 import ArrowButton from "./Components/ArrowButton";
@@ -15,24 +15,22 @@ interface CarouselProps {
   seeMoreUrl: string;
 }
 
-const SecondaryCarousel = ({
+export default function SecondaryCarousel({
   sectionIcon,
   title,
   seeMoreUrl,
   children,
-}: CarouselProps) => {
-  const carouselRef = useRef<HTMLDivElement>(null);
+}: CarouselProps) {
   const {
-    handleScrollLeft,
-    handleScrollRight,
+    carouselRef,
     isScrollAtLeft,
     isScrollAtRight,
-  } = useSecondaruCarousel({
-    carouselRef,
-  });
+    handleScrollLeft,
+    handleScrollRight,
+  } = useSecondaruCarousel();
 
   return (
-    <div className="w-[300px] m-auto h-fit mt-8 tablet:mt-12 tablet:w-[620px] notebook:w-[1024px] desktop:w-[1280px]">
+    <div className="w-75 m-auto h-fit mt-8 tablet:mt-12 tablet:w-155 notebook:w-5xl desktop:w-7xl">
       <div className="grid grid-cols-4 tablet:grid-cols-8 notebook:grid-cols-12 notebook:gap-x-4 mb-7">
         <div className="flex items-center justify-start col-start-1 col-end-4 tablet:col-end-6 notebook:col-end-6">
           <Image
@@ -40,6 +38,7 @@ const SecondaryCarousel = ({
             src={sectionIcon}
             alt={title}
           />
+
           <h1 className="text-white text-sm tablet:text-2xl desktop:text-[2rem]">
             {title}
           </h1>
@@ -51,13 +50,13 @@ const SecondaryCarousel = ({
         >
           Ver Mais
           <Image
-            className="w-2 ml-1 tablet:w-auto tablet:ml-[0.5rem]"
+            className="w-2 ml-1 tablet:w-auto tablet:ml-2"
             src={ShortArrowIcon}
             alt="arrow"
           />
         </Link>
 
-        <div className="mt-2 bg-gradient-to-t from-greenPrimary to-bluePrimary h-[2px] col-start-1 col-end-13 tablet:mt-3" />
+        <div className="mt-2 bg-linear-to-t from-greenPrimary to-bluePrimary h-0.5 col-start-1 col-end-13 tablet:mt-3" />
       </div>
 
       <div className="flex items-center justify-center">
@@ -84,6 +83,4 @@ const SecondaryCarousel = ({
       </div>
     </div>
   );
-};
-
-export default SecondaryCarousel;
+}
